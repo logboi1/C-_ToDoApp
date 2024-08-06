@@ -1,0 +1,29 @@
+@model ToDoApp.Models.ToDoItem
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container mt-5">
+
+    <h2>Edit ToDo</h2>
+    <div class="col-md-4">
+
+        <form asp-action="Edit" method="post">
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-check mt-2">
+                <input asp-for="IsCompleted" class="form-check-input" />
+                <label asp-for="IsCompleted" class="form-check-label">Is Completed</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3">Update</button>
+        </form>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>

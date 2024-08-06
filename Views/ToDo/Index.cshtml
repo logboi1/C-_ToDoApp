@@ -1,0 +1,42 @@
+@model IEnumerable<ToDoApp.Models.ToDoItem>
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">ToDo List</h2>
+
+    <a href="/ToDo/Create" class="btn btn-primary mb-3">Create New</a>
+
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Is Completed</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>
+                        @if (item.IsCompleted)
+                        {
+                            <span class="badge badge-success text-success">Completed</span>
+                        }
+                        else
+                        {
+                            <span class="badge badge-danger text-danger">Not Completed</span>
+                        }
+                    </td>
+                    <td>
+                        <a href="/ToDo/Edit/@item.Id" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="/ToDo/Delete/@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

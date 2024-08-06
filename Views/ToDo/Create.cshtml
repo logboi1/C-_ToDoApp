@@ -1,0 +1,31 @@
+@model ToDoApp.Models.ToDoItem
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+<div class="container mt-5">
+    <h2 class="mb-4">Create ToDo Item</h2>
+
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <input asp-for="Id" type="hidden" id="Id" value="" />
+            <div class="form-group">
+                <label asp-for="Name" class="form-label">Name</label>
+                <input asp-for="Name" class="form-control" placeholder="Enter task name">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-check mt-2">
+                <input asp-for="IsCompleted" class="form-check-input">
+                <label asp-for="IsCompleted" class="form-check-label">Is Completed</label>
+            </div>
+
+            <button type="submit" value="Create" class="btn btn-primary mt-3">Create</button>
+        </form>
+    </div>
+
+
+
+</div>
