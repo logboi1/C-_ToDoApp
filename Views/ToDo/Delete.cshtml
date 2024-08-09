@@ -1,7 +1,11 @@
 @model ToDoApp.Models.ToDoItem
 
+@{
+    ViewData["Title"] = "Delete ToDo Item";
+}
+
 <div class="container mt-5">
-    <h2>Delete ToDo Item</h2>
+    @* <h2>Delete ToDo Item</h2> *@
     <div class="col-md-4">
 
         <form asp-action="Delete">

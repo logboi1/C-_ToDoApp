@@ -44,3 +44,38 @@ body.dark-mode {
 .navbar-light.dark-mode .nav-link {
   color: #ffffff;
 }
+
+/* Wrapper and Sidebar */
+#wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+#sidebar-wrapper {
+  width: 250px;
+  height: 100vh;
+  overflow-y: auto;
+  position: fixed;
+  transition: all 0.3s;
+  background: #ffffff;
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+#page-content-wrapper {
+  width: 100%;
+  /* padding: 20px; */
+  transition: all 0.3s;
+  margin-left: 250px;
+}
+
+.sidebar-heading {
+  padding: 1rem;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.list-group-flush {
+  background-color: transparent;
+  padding-left: 2rem;
+  padding: .5rem;
+}
